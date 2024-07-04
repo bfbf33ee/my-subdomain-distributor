@@ -1,0 +1,9 @@
+# 开启 RewriteEngine
+RewriteEngine On
+
+# 如果请求的是一个实际存在的文件或目录，则不做任何处理
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 重写所有请求到 index.php
+RewriteRule . index.php [L]
